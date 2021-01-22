@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@600&display=swap');
+
+/* Initial Configuration*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+ }
+
+ body {
+    font-family: 'Red Rose',cursive;
+    font-size: 16px;
+    line-height: 1.5em;
+ }
+
+.content{
+ min-height: 600px;
+ padding: 20px;
+ width: 80%;
+ overflow: hidden;
+}
+
+ /*Nav Design*/
+ nav {
+     display: flex;
+     justify-content: space-around;
+     min-height: 7vh;
+     background-color: #0D1117;
+     padding-top: 8px;
+     transition: all.5s ease-in-out;
+     width: 100%;
+    text-align: center;
+    padding-left: 10%;
+ }
+
+ .logo a {
+     color:#C9D1D9;
+     text-decoration: none;
+     font-size: 20px;
+ }
+
+ .logo a:hover{
+     color: #1770F0;
+ }
+ .nav-links{
+    display: flex; 
+    justify-content: space-evenly;
+     width: 50%;
+ }
+
+ .nav-links li {
+    list-style: none;
+    margin-left: 10%;
+ }
+
+ .nav-links a {
+    color: #C9D1D9;     
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.nav-links a:hover{
+    color: #1770F0;
+}
+/*Form Design*/
+/*Form Design*/
+.wrapper{
+    max-width:500px;
+    padding: 10px;
+    margin-left: 35%;
+}
+
+.wrapper .title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding:20px;
+    color:#333;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.form {
+    width: auto;
+    justify-content: space-around;
+}
+
+.inputfield{
+    margin-bottom: 15px;
+    display: flex;
+    text-align: center;
+}
+.inputfield input,textarea {
+    font-family: 'Red Rose', cursive;
+    color:black;
+    font-size: small;
+}
+
+.inputfield label{
+   width: 200px;
+   color:black;
+   margin-right: 15px;
+  font-size: 16px;
+  padding-top: 8px;
+}
+
+.wrapper .form .inputfield .input,
+.wrapper .form .inputfield .textarea{
+  width: 100%;
+  outline: none;
+  border: 1px solid #24254c;
+  font-size: 15px;
+  padding:10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  height: 45px;
+  resize: none;
+}
+.wrapper .form .inputfield .custom_select{
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+.wrapper .form .inputfield .custom_select:before{
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+.wrapper .form .inputfield .custom_select select{
+  -webkit-appearance: none;
+  -moz-appearance:   none;
+  appearance:        none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #333;
+  border-radius: 3px;
+   font-family: 'Red Rose', cursive;
+    color: black
+}
+.wrapper .form .inputfield .input:focus,
+.wrapper .form .inputfield .textarea:focus,
+.wrapper .form .inputfield .custom_select select:focus{
+  border: 1px solid #24254c;
+}
+.wrapper .form .inputfield p{
+   font-size: 14px;
+   color: #24254c;
+}
+.wrapper .form .inputfield:last-child{
+  margin-bottom: 0;
+}
+
+.wrapper .form .inputfield .btn-c{
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px; 
+  border: 0px;
+  background: green;
+  color:white;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+    margin: 10px;
+}
+ 
+fieldset{
+    width: fit-content;
+    padding: 20px;
+}
+
+/*Footer Design*/
+footer{
+  background-color:#0D1117;
+  color: #C9D1D9;  
+  text-align: center;
+  margin: auto;
+  transition: all.5s ease-in-out;
+}
+
+footer .socials {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 5px;
+}
+
+footer .socials a{
+    color: #C9D1D9;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0px 12px;
+    transition: all .5s ease; 
+    padding: 20px;
+}
+
+footer .socials a:hover{
+    color: #1770F0;
+}
+
+
+
+
+/*Responsive and mobile view Design*/
+.mobile-view{
+    display: none;
+    cursor: pointer;
+}
+.mobile-view div{
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+}
+@media screen and (max-width:1024px){
+   .nav-links{
+       width: 60%;
+   }
+}
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #24254c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5 ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .mobile-view{
+        display: block;
+    }
+    nav:active{
+        transform: translateX(0%);
+    }
+}
+
