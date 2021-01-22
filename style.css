@@ -13,12 +13,19 @@
     line-height: 1.5em;
  }
 
+.content{
+ min-height: 600px;
+ padding: 20px;
+ width: 80%;
+ overflow: hidden;
+}
+
  /*Nav Design*/
  nav {
      display: flex;
      justify-content: space-around;
      min-height: 7vh;
-     background-color: #24254c;
+     background-color: #0D1117;
      padding-top: 8px;
      transition: all.5s ease-in-out;
      width: 100%;
@@ -27,13 +34,13 @@
  }
 
  .logo a {
-     color:whitesmoke;
+     color:#C9D1D9;
      text-decoration: none;
      font-size: 20px;
  }
 
  .logo a:hover{
-     color: tomato;
+     color: #1770F0;
  }
  .nav-links{
     display: flex; 
@@ -47,17 +54,42 @@
  }
 
  .nav-links a {
-    color: white;     
+    color: #C9D1D9;     
     text-decoration: none;
     font-weight: bolder;
 }
 
 .nav-links a:hover{
-    color: tomato;
+    color: #1770F0;
 }
 
+/*Footer Design*/
+footer{
+  background-color:#0D1117;
+  color: #C9D1D9;  
+  text-align: center;
+  margin: auto;
+  transition: all.5s ease-in-out;
+}
 
+footer .socials {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 5px;
+}
 
+footer .socials a{
+    color: #C9D1D9;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0px 12px;
+    transition: all .5s ease; 
+    padding: 20px;
+}
+
+footer .socials a:hover{
+    color: #1770F0;
+}
 
 
 
