@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API-FRONTEND</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/home.css">
     <script src="https://kit.fontawesome.com/4752a58f75.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav> 
         <div class="logo">
-            <a href="index.html"><h4><i class="fas fa-fingerprint"></i>HRIS</h4></a>
+            <a href="/index.html"><h4><i class="fas fa-fingerprint"></i>HRIS</h4></a>
         </div>
             <ul class="nav-links">
         <li>
-            <a href="#" class="href"><i class="fas fa-address-card"></i>EMPLOYEE</a>
+            <a href="/html/Employee.html" class="href"><i class="fas fa-address-card"></i>EMPLOYEE</a>
         </li>
          <li>
-            <a href="#" class="href"><i class="far fa-id-badge"></i>POSITION</a>
+            <a href="html/Position.html" class="href"><i class="far fa-id-badge"></i>POSITION</a>
        </li>
           <li>
-            <a href="#" class="href"><i class="far fa-building"></i>DEPARTMENT</a>
+            <a href="html/Department.html" class="href"><i class="far fa-building"></i>DEPARTMENT</a>
         </li>
        </ul>
        <div class="mobile-view">
@@ -29,23 +29,75 @@
         <div class="line3"></div>
         </nav>
 
+        <!--Content Part-->
 <div class="content">
-
-</div>
-
-        <!---Footer-->
-<footer> 
-    <div class="container">
-    <div class="socials">
-       <a href="https://web.facebook.com/Netkee"> <i class="fab fa-facebook"></i> Facebook   </a>
-        <a href="https://github.com/kennethregonay/M3-Frontend"><i class="fab fa-github"></i>  Github  </a>
-        <a href="https://www.instagram.com/netkeee/"><i class="fab fa-instagram-square"></i>  Instagram  </a>
-    </div>
-        <div>
-            <p> &copy; 2021 Regonay API-Front </p> 
-            <p>All Rights Reserved.</p>
+    <!--Form-->
+    <div class="wrapper">
+      <fieldset>
+        <div class="title">
+          Employee Information
         </div>
-    </div>
-</footer>
+        <div class="form">
+          <form  method="POST">
+            <input type="hidden" name= "id" value = "">
+            <div class="inputfield">
+              <label>First Name</label>
+              <input type="text" class="input" required name="fname" value = "" >
+           </div>  
+            <div class="inputfield">
+              <label>Middle Name</label>
+              <input type="text" class="input" name="mname" value = "">
+           </div>  
+           <div class="inputfield">
+              <label>Last Name</label>
+              <input type="text" class="input" required name="lname" value = "">
+           </div>  
+          <div class="inputfield">
+              <label>Address</label>
+              <textarea class="textarea" required name="address" value = ""></textarea>
+           </div> 
+            <div class="inputfield">
+              <label>Gender</label>
+              <div class="custom_select">
+                <select required name="gender">
+                  <option value="">SELECT</option>
+                  <option value="male">MALE</option>
+                  <option value="female">FEMALE</option>
+                </select>
+              </div>
+           </div> 
+            <div class="inputfield">
+              <label>BirthDate</label>
+              <input type="date" class="input" required name="bdate" id="mydate"
+              value="2021-12-27">
+           </div> 
+          <div class="inputfield">
+              <label>Position Code</label>
+              <input type="number" class="input" required name="poscode">
+           </div> 
+           <div class="btn">
+           <div class="inputfield">
+            <input type="submit" value="CREATE" name = 'create' class="btn-c">
+            </div>
+          </div>
+        </div>
+        </div>
+      </form>
+        </fieldset>
+        </div>
 </body>
+ <!---Footer-->
+        <footer> 
+            <div class="container">
+            <div class="socials">
+               <a href="https://web.facebook.com/Netkee"> <i class="fab fa-facebook"></i> Facebook   </a>
+                <a href="https://github.com/kennethregonay/M3-Frontend"><i class="fab fa-github"></i>  Github  </a>
+                <a href="https://www.instagram.com/netkeee/"><i class="fab fa-instagram-square"></i>  Instagram  </a>
+            </div>
+                <div>
+                    <p> &copy; 2021 Regonay API-Front </p> 
+                    <p>All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
 </html>
