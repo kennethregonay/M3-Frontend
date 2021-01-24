@@ -38,28 +38,28 @@
           Employee Information
         </div>
         <div class="form">
-          <form  method="POST">
-            <input type="hidden" name= "id" value = "">
+          <form id="form-input" method="POST">
+            <input type="hidden" id= "id" value = "">
             <div class="inputfield">
               <label>First Name</label>
-              <input type="text" class="input" required name="fname" value = "" >
+              <input type="text" class="input" required id="fname" value = "" >
            </div>  
             <div class="inputfield">
               <label>Middle Name</label>
-              <input type="text" class="input" name="mname" value = "">
+              <input type="text" class="input" id="mname" value = "">
            </div>  
            <div class="inputfield">
               <label>Last Name</label>
-              <input type="text" class="input" required name="lname" value = "">
+              <input type="text" class="input" required id="lname" value = "">
            </div>  
           <div class="inputfield">
               <label>Address</label>
-              <textarea class="textarea" required name="address" value = ""></textarea>
+              <textarea class="textarea" required id="address" value = ""></textarea>
            </div> 
             <div class="inputfield">
               <label>Gender</label>
               <div class="custom_select">
-                <select required name="gender">
+                <select required id="gender">
                   <option value="">SELECT</option>
                   <option value="male">MALE</option>
                   <option value="female">FEMALE</option>
@@ -68,16 +68,16 @@
            </div> 
             <div class="inputfield">
               <label>BirthDate</label>
-              <input type="date" class="input" required name="bdate" id="mydate"
+              <input type="date" class="input" required id="bdate" id="mydate"
               value="2021-12-27">
            </div> 
           <div class="inputfield">
               <label>Position Code</label>
-              <input type="number" class="input" required name="poscode">
+              <input type="number" class="input" required id="poscode">
            </div> 
            <div class="btn">
            <div class="inputfield">
-            <input type="submit" value="CREATE" name = 'create' class="btn-c">
+            <input type="submit" value="CREATE" name = 'create' class="btn-c">>
             </div>
           </div>
         </div>
@@ -85,6 +85,7 @@
       </form>
         </fieldset>
         </div>
+  <script src="/Javascript/employee.js"> </script>
 </body>
  <!---Footer-->
         <footer> 
