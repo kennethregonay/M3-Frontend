@@ -8,6 +8,7 @@ const address = document.getElementById('address');
 const gender = document.getElementById('gender');
 const bdate = document.getElementById('bdate');
 const poscode = document.getElementById('poscode');
+ 
 
 
 // Retriving Records in the Employee Table.
@@ -15,7 +16,6 @@ const  getdata = (emp) => {
     emp.forEach(employee => {
         output 
         += `<tr>
-            <td>${employee.id}</td>
             <td>${employee.Firstname}</td>
             <td>${employee.MiddleName}</td>
             <td>${employee.Lastname}</td>
@@ -24,13 +24,26 @@ const  getdata = (emp) => {
             <td>${employee.Birthdate}</td>
             <td>${employee.Position_Code}</td>
             <td>
-              <a href="index.html?update=${employee.id}" class="btn btn-info" id = "update" onclick="update(${employee.id})">Update </a>
-               <a href="employee.html?delete=${employee.id}" class="btn btn-danger" id "delete" onclick="del(${employee.id})">Delete</a>
+              <a href="#" class="btn btn-info" id = "update" onclick="update(${employee.id})">Update</a>
+               <a href="#" class="btn btn-danger" id = "delete" onclick="del(${employee.id})">Delete</a>
             </td>
           </tr>`;
           });
             document.getElementById('table-body').innerHTML = output;
 }
+
+//fill the form in the index.html
+const update = (data) => {
+    fname.value = data.Firstname;
+    lname.value = data.Lastname;
+    mname.value =data.MiddleName;
+    address.value = data.Address;  
+    gender.value = data.Gender;
+    bdate.value = data.Birthdate;
+    poscode.value = data.Position_Code; 
+}
+
+
 
 fetch(api)
 .then((res) => res.json())
@@ -38,6 +51,8 @@ fetch(api)
 .catch((error) => {
     console.log(error);
 })
+
+
 
 // Add a new Record in the Employee Table
 add.addEventListener('submit',(e) => {
@@ -58,36 +73,58 @@ add.addEventListener('submit',(e) => {
             Position_Code : poscode.value,
         }),
     })
-    .then ((res) => console.log(res.json()))
+    .then ((res) => (res.json()))
     .then (data =>{
         getdata(data);
         location.reload();
     })
     .catch((error) => {
         console.log(error);
+        location.reload();
     })
 })
 
 
-//delete the data in the DB using Fetch 
-function del (id) {
-    fetch (`${api}/${id}`,{
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept' : 'application/json',
-        } 
-    })
-    .then (res => res.json())
-    .then(() => location.reload())
-    .catch((error) => {
-         console.log (error);
-    })
+// Delete Records in the Employee Table
+function del (emp){
+    if (emp != 0){
+        fetch(`${api}/${emp}`,{
+            method: 'DELETE',
+        })
+        .then(() => location.reload())
+        .catch((error)=>{
+            console.log(error);
+        })      
+    }else{
+        console.log ('Button not Click Yet.')
+    }
 }
-// the content in the Employee Form
-function update (id) {
+
+// update the Employee Table using the API Breakpoints
+function update (id){
+    if  (id != 0){
     
+    var text = prompt ('Update What ? : ')
+    switch(text.toUpperCase()){
+        case "FIRSTNAME":
+            var input = prompt (`ENTER ${text.toUpperCase} : `)
+            fetch (`${api}/${id}`)
+            .then((res) => res.json())
+            .then(data => update (data ['data'],input, id, 1))
+            .catch((error) => {
+            console.log(error);
+            })
+    }
+        
+    }else {
+        console.log ('Di pumasok')
+    }
 }
+
+
+
+
+
 
 
 
