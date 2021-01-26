@@ -1,3 +1,4 @@
+//declarations of variables
 const api = 'http://m2-act.test/api/employee';
 let output = '';
 const add = document.getElementById('form-input');
@@ -32,19 +33,129 @@ const  getdata = (emp) => {
             document.getElementById('table-body').innerHTML = output;
 }
 
-//fill the form in the index.html
-const update = (data) => {
-    fname.value = data.Firstname;
-    lname.value = data.Lastname;
-    mname.value =data.MiddleName;
-    address.value = data.Address;  
-    gender.value = data.Gender;
-    bdate.value = data.Birthdate;
-    poscode.value = data.Position_Code; 
+//update process/ functionalities
+const updatedata = (id,no,input) => {
+   switch (no){
+       case 1:
+          fetch (`${api}/${id}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                Firstname  : input.toString(),
+            }),
+          })
+          .then (res => res.json())
+          .then (() => location.reload())
+          .catch ((error) =>{
+                console.log (error);
+          })
+       break;
+       case 2:
+        fetch (`${api}/${id}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                Middlename  : input.toString(),
+            }),
+          })
+          .then (res => res.json())
+          .then (() => location.reload())
+          .catch ((error) =>{
+                console.log (error);
+          })
+       break;
+       case 3:
+        fetch (`${api}/${id}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                Lastname  : input.toString(),
+            }),
+          })
+          .then (res => res.json())
+          .then (() => location.reload())
+          .catch ((error) =>{
+                console.log (error);
+          })
+       break
+       case 4:
+        fetch (`${api}/${id}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                Address  : input.toString(),
+            }),
+          })
+          .then (res => res.json())
+          .then (() => location.reload())
+          .catch ((error) =>{
+                console.log (error);
+          })
+        break;
+        case 5:
+            fetch (`${api}/${id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    Gender  : input.toString(),
+                }),
+              })
+              .then (res => res.json())
+              .then (() => location.reload())
+              .catch ((error) =>{
+                    console.log (error);
+              })
+        break;
+        case 6:
+            fetch (`${api}/${id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    Birthdate  : input.toString(),
+                }),
+              })
+              .then (res => res.json())
+              .then (() => location.reload())
+              .catch ((error) =>{
+                    console.log (error);
+              })
+        break
+        case 7:
+            fetch (`${api}/${id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    Position_Code  : input.toString(),
+                }),
+              })
+              .then (res => res.json())
+              .then (() => location.reload())
+              .catch ((error) =>{
+                    console.log (error);
+              })
+        break
+        default:
+            console.log ("Sorry an Error Occured."); 
+        break;
+    }
 }
 
 
-
+// get all the data in the Emloyee table
 fetch(api)
 .then((res) => res.json())
 .then(data => getdata(data['data']))  
@@ -103,23 +214,46 @@ function del (emp){
 // update the Employee Table using the API Breakpoints
 function update (id){
     if  (id != 0){
-    
     var text = prompt ('Update What ? : ')
     switch(text.toUpperCase()){
         case "FIRSTNAME":
-            var input = prompt (`ENTER ${text.toUpperCase} : `)
-            fetch (`${api}/${id}`)
-            .then((res) => res.json())
-            .then(data => update (data ['data'],input, id, 1))
-            .catch((error) => {
-            console.log(error);
-            })
-    }
-        
-    }else {
-        console.log ('Di pumasok')
-    }
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)  
+           updatedata(id,1,input);
+            break
+            case "MIDDLENAME":
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)
+            updatedata(id,2,input);
+            break
+            case "LASTNAME":
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)
+            updatedata(id,3,input);
+            break
+            case "ADDRESS":
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)
+            updatedata(id,4,input);
+            break
+            case "GENDER":
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)
+            updatedata(id,5,input);
+            break
+            case "BIRTHDATE":
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)
+            updatedata(id,6,input);
+            break
+            case "POSITION CODE":
+            var input = prompt (`ENTER ${text.toUpperCase()} : `)
+            updatedata(id,7,input);
+            break
+            default:
+            alert ("Be specific on your input.\nExample: \n   Firstname,Lastname and etc." );
+             break
+            }  
+        }else {
+        console.log ('Please Try Again..')
+        }
 }
+
+
 
 
 
