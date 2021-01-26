@@ -76,9 +76,23 @@ footer{
       color: #1770F0;
   }
   
-  
-  
-  
+  /*Form Design*/
+.form-group{
+    padding: 5px;
+    width:50%;
+}
+.form-group label {
+    font-weight: bolder;
+}
+.form-group input[type=submit]{
+    text-transform: uppercase;
+    font-weight: bold;
+    color:black;
+}
+.row-justify-content-center{
+    justify-content: space-between;
+}
+
   /*Responsive and mobile view Design*/
   .mobile-view{
       display: none;
