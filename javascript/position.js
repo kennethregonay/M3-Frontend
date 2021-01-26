@@ -26,7 +26,7 @@ const refresh = (post) =>{
     document.getElementById('table-body').innerHTML = output;
 }
 
-//Retrive all the information on the Department Table
+//Retrive all the information on the Position Table
 function retrive() {
     fetch (url)
     .then ((res) => res.json())
@@ -38,7 +38,7 @@ function retrive() {
     })
 }
 
-//add a new record in the Department Table using API endpoints.
+//add a new record in the Position Table using API endpoints.
 add.addEventListener('submit', (e) =>{
   e.preventDefault();
   fetch(url,{

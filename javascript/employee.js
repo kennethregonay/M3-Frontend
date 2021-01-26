@@ -155,7 +155,7 @@ const updatedata = (id,no,input) => {
 }
 
 
-// get all the data in the Emloyee table
+// get all the data in the Employee table
 fetch(api)
 .then((res) => res.json())
 .then(data => getdata(data['data']))  
